@@ -30,6 +30,33 @@ pnpm add -D tailwind-scrollbar
 @plugin 'tailwind-scrollbar';
 ```
 
+## Standalone CLI (No Node.js)
+
+If you are using Tailwind CSS standalone CLI, download the prebuilt plugin bundle:
+
+```bash
+curl -sLO https://github.com/adoxography/tailwind-scrollbar/releases/latest/download/tailwind-scrollbar.mjs
+```
+
+Then reference it from your input CSS:
+
+```css
+@import 'tailwindcss';
+
+@source not './tailwind-scrollbar.mjs';
+
+@plugin './tailwind-scrollbar.mjs';
+```
+
+Plugin options work the same way:
+
+```css
+@plugin './tailwind-scrollbar.mjs' {
+  nocompatible: true;
+  preferredStrategy: 'pseudoelements';
+}
+```
+
 ## Usage
 See the [documentation](https://adoxography.github.io/tailwind-scrollbar/examples).
 

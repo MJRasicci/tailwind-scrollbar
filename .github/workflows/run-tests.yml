@@ -26,6 +26,12 @@ jobs:
         run: |
           npm ci
 
+      - name: Build standalone bundle
+        run: npm run build-bundle
+
+      - name: Verify standalone bundle is up to date
+        run: git diff --exit-code -- bundle/tailwind-scrollbar.mjs
+
       - name: Lint code
         run: npm run lint
 

@@ -47,6 +47,33 @@ The lastest version of `tailwind-scrollbar` (v4) is only compatible with `tailwi
     </TabItem>
 </Tabs>
 
+### Standalone CLI (No Node.js)
+
+If you're using Tailwind's standalone executable, download the prebuilt plugin bundle from the latest release:
+
+```bash
+curl -sLO https://github.com/adoxography/tailwind-scrollbar/releases/latest/download/tailwind-scrollbar.mjs
+```
+
+Then load it directly from your CSS:
+
+```css
+@import 'tailwindcss';
+
+@source not './tailwind-scrollbar.mjs';
+
+@plugin './tailwind-scrollbar.mjs';
+```
+
+You can pass plugin options the same way:
+
+```css
+@plugin './tailwind-scrollbar.mjs' {
+    nocompatible: true;
+    preferredStrategy: 'pseudoelements';
+}
+```
+
 ## Configuration
 
 ### `nocompatible`
